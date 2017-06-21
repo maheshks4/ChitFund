@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Sidebar - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+   
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">	
+    <link href="css/ng-table.css" rel="stylesheet"/>
+    <link href="css/ngExDialog.css" rel="stylesheet"/>
+
+    <!-- charts css-->
+    <link rel="stylesheet" href="lib/chartlib/nvd3/build/nv.d3.css">
+
+
+    <!-- floating dash board css-->
+    <link rel="stylesheet" href="lib/chartlib/gridster/style.css">
+    <link rel="stylesheet" href="lib/chartlib/angular-gridster/dist/angular-gridster.min.css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body ng-controller="bodyController">
+    <div>
+        <header class="bar-title ng-scope">
+            <a class="button nav" href="#" id="nav">
+                <span aria-hidden="true" class="icon-menu"></span>
+            </a>
+
+            <h1 class="title"><img src="images/logo.png" alt="Use Chrome" height="35px" width="35px"> Chit Fund Management web application</h1>
+            <a class="button info" href="#" id="about" style="width:30px;text-align:center">
+                <span aria-hidden="true" class="icon-info-sign"></span>
+            </a>
+        </header>
+    </div>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        <img src="images/logo.png" alt="Use Chrome" height="25px" width="25px">
+                        CFM Menu
+                    </a>
+                </li>
+                <li>
+                    <a href="#/DashboardView">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#/repeatView">Chit Management</a>
+                </li>
+                <li>
+                    <a href="#/showView">Reports</a>
+                </li>
+                <li>
+                    <a href="#/UserView">Users</a>
+                </li>
+                <li>
+                    <a href="#/customView">Notifications</a>
+                </li>
+                <li>
+                    <a href="#">About us</a>
+                </li>
+                <li>
+                    <a href="#">LogOut</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div id="main" class="body-content">
+                            <div ng-view />
+                            <h1>Hello!</h1>
+                            <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+                            <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+                            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                        </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="loader-div" loader>
+            <img src="css/Images/loader-indicator.gif" class="ajax-loader" />
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">@Mahesh</p>
+            </div>
+        </footer>
+
+        <!-- /#page-content-wrapper -->
+        <div id="infos" class="ng-scope open" style="display: none">
+            <h2>Created by :</h2>
+            <img src="images/block_nine.jpg" alt="" id="infosImg" title="" width="162" height="196">
+            <a href="mailto:contact@revolunet.com" target="_blank" class="git">contact@revolunet.com</a>
+            <a class="git" target="_blank" href="https://github.com/revolunet/angular-carousel">Github Project</a>
+        </div>
+    </div>
+    <!-- /#wrapper -->
+    <!-- libs used -->
+    <script src="lib/jquery.js"></script>
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="lib/angular-resource.js"></script>
+    <script src="lib/angular-animate.js"></script>
+    <script src="lib/ui-bootstrap-tpls-0.12.0.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="lib/bootstrap.min.js"></script>
+
+    <!-- My JavaScript -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/directives.js"></script>
+    <script src="scripts/ng-table.js"></script>
+    <script src="scripts/ngExDialog.js"></script>
+    <script src="scripts/ajaxLoader.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/dataServices.js"></script>
+
+    <!-- chart JavaScript -->
+    <script src="lib/chartlib/d3/d3.min.js"></script>
+    <script src="lib/chartlib/angular-nvd3/dist/angular-nvd3.js"></script>
+    <script src="lib/chartlib/nvd3/build/nv.d3.js"></script>
+
+    <!-- floating dash board js-->
+    <script src="lib/chartlib/angular-gridster/dist/angular-gridster.min.js"></script>
+    <script src="lib/chartlib/angular-gridster/dist/dashboardController.js"></script>
+
+    <!-- floating chart js-->
+    <script src="lib/chartlib/js/lineChart.js"></script>
+    <script src="lib/chartlib/js/cumulativeLineChart.js"></script>
+    <script src="lib/chartlib/js/stackedAreaChart.js"></script>
+    <script src="lib/chartlib/js/multiBarChart.js"></script>
+    <script src="lib/chartlib/js/discreteBarChart.js"></script>
+    <script src="lib/chartlib/js/historicalBarChart.js"></script>
+    <script src="lib/chartlib/js/multiBarHorizontalChart.js"></script>
+    <script src="lib/chartlib/js/pieChart.js"></script>
+    <script src="lib/chartlib/js/scatterChart.js"></script>
+    <script src="lib/chartlib/js/scatterPlusLineChart.js"></script>
+    <script src="lib/chartlib/js/linePlusBarChart.js"></script>
+    <script src="lib/chartlib/js/lineWithFocusChart.js"></script>
+    <script src="lib/chartlib/js/linePlusBarWithFocusChart.js"></script>
+    <script src="lib/chartlib/js/bulletChart.js"></script>
+    <script src="lib/chartlib/js/sparklinePlus.js"></script>
+    <script src="lib/chartlib/js/donutChart.js"></script>
+    <script src="lib/chartlib/js/parallelCoordinates.js"></script>
+    <script src="lib/chartlib/js/multiChart.js"></script>
+    <script src="lib/chartlib/js/lineWithFisheyeChart.js"></script>
+    <script src="lib/chartlib/js/candlestickBarChart.js"></script>
+    <script src="lib/chartlib/js/sunburstChart.js"></script>
+    <script src="lib/chartlib/js/ohlcBarChart.js"></script>
+    <script src="lib/chartlib/js/boxPlotChart.js"></script>
+    <!--<script src="https://apis.google.com/js/platform.js" async defer></script>-->
+
+    <script type="text/javascript">
+      
+        //<!-- Menu Toggle Script -->
+        $("#wrapper").toggleClass("toggled");
+
+        $("#infosImg").click(function (e) {
+            e.preventDefault();
+            $("#infos").hide();
+        });
+
+        $("#about").click(function (e) {
+            e.preventDefault();
+            $("#infos").toggle();
+        });
+
+        $("#nav").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+
+        </script>
+</body>
+
+</html>

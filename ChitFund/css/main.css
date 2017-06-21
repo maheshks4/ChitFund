@@ -1,0 +1,232 @@
+ body {
+  margin: 0;
+  background: #ecf0f1;
+  color: black;
+  font-family: 'Andika', sans-serif;
+  overflow-y: hidden; }  
+
+@font-face {
+  font-family: 'icomoon';
+  src: url(../flickr-full/font/icomoon.eot);
+  src: url(#{$fontUrl}icomoon.eot?#iefix) format('embedded-opentype'), url(../css/fonts/icomoon.woff) format('woff'), url(../css/fonts/icomoon.ttf) format('truetype'), url(#{$fontUrl}icomoon.svg#icomoon) format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased; }
+
+.icon-menu, .icon-cancel, .icon-info-sign {
+  font-family: 'icomoon';
+  display: inline-block;
+  color: white;
+  speak: none;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased; }
+
+.icon-menu:before {
+  display: inline-block;
+  content: "\e000"; }
+
+.icon-cancel:before {
+  content: "\e001"; }
+
+.icon-info-sign:before {
+  content: "\f05a"; }
+
+
+
+
+
+/* Title bar
+-------------------------------------------------- */
+/* Bar docked to top of viewport for showing page title and actions */
+.bar-title {
+  top: 0;
+  line-height: 45px;
+  background: #2980b9;
+  line-height: 35px; }
+  .bar-title .info {
+    float: right; }
+
+/* Centered text in the .bar-title */
+.bar-title .title {
+  position: absolute;
+  line-height: 45px;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+  margin: 0; }
+
+
+
+/* Generic style for all buttons in .bar-title */
+.bar-title [class*="button"] {
+  position: relative;
+  text-decoration: none;
+  z-index: 10;
+  /* Places buttons over full width title */
+  font-size: 16px;
+  line-height: 35px;
+  color: #fff; }
+
+/* Hacky way to right align buttons outside of flex-box system
+   Note: is only absolutely positioned button, would be better if flex-box had an "align right" option */
+.bar-title .title + [class*="button"]:last-child, .bar-title .button + [class*="button"]:last-child, .bar-title [class*="button"].pull-right {
+  position: absolute;
+  top: 5px;
+  right: 5px; }
+
+
+
+
+ul.list {
+  font-size: 0.8em;
+  margin-left: -40px;
+  margin-top: 0;
+  width: 200px !important; }
+
+ul.list li {
+  font-family: 'Arvo', sans-serif;
+  padding: 10px;
+  background-color: #ecf0f1;
+  border-bottom: 1px solid #f8f9fa;
+  color: #111111; }
+  ul.list li.close {
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+    background-color: #2980b9;
+    padding: 0;
+    border-bottom: none; }
+
+ul.list li.list-divider {
+  font-family: 'Andika', sans-serif;
+  background: #2370a0;
+  color: white;
+  font-size: 1em;
+  padding: 8px 5px;
+  text-transform: uppercase;
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black; }
+
+.loading {
+  width: 100%;
+  height: 100%;
+  background: #333;
+  font-size: 22px; }
+
+.ngSnap-shelf {
+  overflow-x: hidden; }
+
+.ngSnap-content {
+  overflow-x: hidden; }
+
+/*
+generic styles applied to any carousel
+must be ul/li
+*/
+.rn-carousel-container {
+  overflow: hidden; }
+
+ul.rn-carousel-slides {
+  position: relative;
+  white-space: nowrap;
+  overflow: visible;
+  -webkit-transform: translate3d(0px, 0, 0);
+  -moz-transform: translate3d(0px, 0, 0);
+  transform: translate3d(0px, 0, 0);
+  padding: 0;
+  margin: 0; }
+
+ul.rn-carousel-slides li {
+  white-space: normal;
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+#modal, #infos {
+  opacity: 1;
+  transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  position: absolute;
+  top: 45px;
+  bottom: 0px;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border: 3px solid white;
+  box-shadow: 6px 6px 6px rgba(60, 60, 60, 0.6);
+  color: black;
+  padding: 0;
+  margin: 5% 10%;
+  width: 80%;
+  height: 80%; }
+  #modal p, #infos p {
+    margin: 0;
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+    float: left;
+    font-size: .8em; }
+  #modal .closebtn, #infos .closebtn {
+    float: right;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #164766; }
+    #modal .closebtn:hover, #infos .closebtn:hover {
+      cursor: pointer; }
+  #modal .title, #infos .title {
+    background: rgba(255, 255, 255, 0.9);
+    height: 35px;
+    line-height: 35px;
+    color: #333;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box; }
+  #modal.open, #infos.open {
+    opacity: 1; }
+
+#infos {
+  top: 50%;
+  width: 40%;
+  height: 400px;
+  margin: -165px 30% 0;
+  text-align: center; }
+  #infos h2 {
+    margin: 0;
+    padding: 10px 0;
+    display: block;
+    background: #2980b9; }
+  #infos a {
+    display: block; }
+  #infos img {
+    margin-top: 10px; }
+  #infos .git {
+    margin-top: 20px;
+    color: black;
+    text-decoration: none; }

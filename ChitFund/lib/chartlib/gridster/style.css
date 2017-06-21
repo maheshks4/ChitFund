@@ -1,0 +1,72 @@
+.wrap-dashboard {
+    margin: 5px 10px 10px 10px;
+    padding-bottom: 20px;
+}
+
+.dashboard .controls {
+    margin-bottom: 20px;
+}
+.dashboard .page-header {
+    padding: 0;
+    margin: 20px 20px 15px 20px;
+}
+
+.dashboard .page-header .btn {
+    margin-left: 5px;
+}
+
+.dashboard .page-header .form-control {
+    width: 150px;
+    display:inline-block;
+}
+
+.dashboard ul {
+    list-style: none;
+}
+.dashboard .box {
+    height: 100%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding-top: 35px;
+}
+.dashboard .box-header {
+    background-color: #eee;
+    padding: 0 42px 0 10px;
+    border: 1px solid #ccc;
+    cursor: move;
+    position: absolute;
+    width: 100%;
+    height: 36px;
+    top: 0;
+    left: 0;
+}
+.dashboard .box-header h3 {
+    width: 100%;
+    font-size: 20px;
+    margin: 6px 0px;
+    display: inline-block;
+}
+.dashboard .box-content {
+    height: 100%;
+    padding: 5px;
+}
+.dashboard .box-header-btns {
+    top: 9px;
+    right: 10px;
+    cursor: pointer;
+    position: absolute;
+}
+.dashboard .box-header-btns a {
+    color: #ccc;
+}
+.dashboard form {
+    margin-bottom: 0;
+}
+.dashboard .gridster {
+    border: 1px solid #ccc;
+}
+
+/* Modal */
+.dashboard .modal {
+    overflow-y: hidden;
+}

@@ -1,0 +1,120 @@
+﻿<div class="well centerize content">
+    
+    <h3><ng-pluralize count="model.displayCount()" when="contactTitle"></ng-pluralize></h3>
+    <form name="contactForm" id="frmContact" novalidate ng-validator>
+        <div id="message" class="error-message ng-with-newlines">{{model.errorMessage}}</div>
+        <div ng-show="showContactList" style="padding-top:10px;">
+            <div>
+                <table ng-table="tableParams"   class="table table-striped table-hover table-condensed bottom-border">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" ng-model="checkboxes.topChecked" ng-disabled="checkboxes.topDisabled" ng-change="topCheckboxChange()" value="" /></th>
+                            <th class="text-left">Contact Name <span class="field-required">*</span></th>
+                            <th class="text-left">Phone <span class="field-required">*</span></th>
+                            <th class="text-left">Email <span class="field-required">*</span></th>
+                            <th class="text-left">Address</th>
+                            <th class="text-left">Primary Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--ng-if: Use "$data[$index] != undefined". "item != undefined" doesn't work when refreshing-->
+                        <tr ng-repeat="item in $data" ng-if="$data[$index] != undefined">
+                            <td width=" 40px" style="text-align:center">
+                                <input type="checkbox" ng-model="checkboxes.items[$index]" ng-change="listCheckboxChange($index)"
+                                       ng-disabled="rowDisables[$index]" />
+                            </td>
+                            <td width="100px" align="left">
+                                <span ng-if="!checkboxes.items[$index]" class="control-color">{{item.Name}}</span>
+                                <div ng-if="checkboxes.items[$index]"
+                                     ng-class="{'has-warning' : contactForm.txtName_{{$index}}.$dirty}">
+                                    <input type="text"
+                                           class="form-control" style="width:90%;"
+                                           ng-model="item.Name"
+                                           name="txtName_{{$index}}" set-name-object
+                                           ng-focus="setVisited('txtName', $index)"
+                                           validate-on="blur"
+                                           clear-on="focus"
+                                           required required-message="'Field is required.'"
+                                           ng-maxlength="50">
+                                </div>
+                            </td>
+                            <td width="80px" align="left">
+                                <span ng-if="!checkboxes.items[$index]" class="control-color">{{item.Phone}}</span>
+                                <div ng-if="checkboxes.items[$index]"
+                                     ng-class="{'has-warning' : contactForm.txtPhone_{{$index}}.$dirty}">
+                                    <input type="text"
+                                           class="form-control" style="width:90%;"
+                                           ng-model="item.Phone"
+                                           name="txtPhone_{{$index}}" set-name-object
+                                           ng-focus="setVisited('txtPhone', $index)"
+                                           validate-on="blur"
+                                           clear-on="focus"
+                                           ng-pattern="\d{5}([- ]*)\d{6}"
+                                           invalid-message="'Invalid phone number.'"
+                                           required required-message="'Field is required.'"
+                                           ng-maxlength="50">
+                                </div>
+                            </td>
+                            <td width="60px" align="left">
+                                <span ng-if="!checkboxes.items[$index]" class="control-color">{{item.Email}}</span>
+                                <div ng-if="checkboxes.items[$index]"
+                                     ng-class="{'has-warning' : contactForm.txtEmailAddress_{{$index}}.$dirty}">
+                                    <input type="text"
+                                           class="form-control" style="width:90%;"
+                                           ng-model="item.Email"
+                                           name="txtEmailAddress_{{$index}}" set-name-object
+                                           ng-focus="setVisited('txtEmailAddress', $index)"
+                                           validate-on="blur"
+                                           clear-on="focus"
+                                           ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/"
+                                           invalid-message="'Invalid email address format.'"
+                                           required required-message="'Field is required.'"
+                                           ng-maxlength="100">
+                                </div>
+                            </td>
+                            <td width="100px" align="left">
+                                <span ng-if="!checkboxes.items[$index]" class="control-color">{{item.Address}}</span>
+                                <div ng-if="checkboxes.items[$index]"
+                                     ng-class="{'has-warning' : contactForm.txtAddress_{{$index}}.$dirty}">
+                                    <input type="text"
+                                           class="form-control" style="width:90%;"
+                                           ng-model="item.Address"
+                                           name="txtAddress_{{$index}}" set-name-object
+                                           ng-focus="setVisited('txtAddress', $index)"
+                                           validate-on="blur"
+                                           clear-on="focus"                                         
+                                           ng-maxlength="100">
+                                </div>
+                            </td>
+                            <td width="60px">
+                                <span ng-if="!checkboxes.items[$index]" class="control-color">{{(item.PrimaryType==0)?'': (item.PrimaryType==1)?'Phone':'Email'}}</span>
+                                <div ng-if="checkboxes.items[$index]"
+                                     ng-class="{'has-warning' : contactForm.ddlPrimaryType_{{$index}}.$dirty}">
+                                    <select id="ddlPrimaryType_{{$index}}" name="ddlPrimaryType"
+                                            class="form-control" style="width:90%;"
+                                            ng-class="{'placeholder-color':item.PrimaryType==0, 'control-color': item.PrimaryType>0,
+                                                    'has-warning-me': ddlPrimaryTypeDirty[$index] }"
+                                            ng-change="primaryTypeChanged($index, item.PrimaryType)"
+                                            ng-model="item.PrimaryType"
+                                            ng-options="pt.id as pt.name for pt in model.primaryTypes"
+                                            options-class="{'placeholder-color':'placeholder', 'control-color':'data'} "></select>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <span class="legend-line" style="margin-top: -10px;">(<span class='field-required'>*</span>: required field)</span>
+            </div>
+            <div style="padding-top:10px; padding-right:30px; float:right">
+                <button type="button" class="btn btn-primary" style="margin-left:20px;" ng-disabled="(!isEditDirty && !isAddDirty) || contactForm.$invalid" id="btnSaveChanges" ng-click="SaveChanges()">Save Changes</button>
+                <!--Use "ng-mousedown" (occurring earlier) instead of "ng-click" to avoid previous focused input element "on-blur" action before clicking Add button-->
+                <button type="button" class="btn btn-secondary" style="margin-left:20px;" ng-disabled="!isEditDirty && !isAddDirty && editRowCount == 0 && addRowCount == 0" id="btnCancelChanges" ng-mousedown="CanelChanges()">Cancel Changes</button>
+            </div>
+            <div style="padding-top:10px;">
+                <!--Use "ng-mousedown" instead of "ng-click" (see above)-->
+                <button type="button" class="btn btn-success" style="margin-left:20px;" ng-disabled="editRowCount > 0 || addRowCount >= maxAddNumber" id="btnAddContacts" ng-mousedown="addNewContact()">&#160;&#160;Add&#160;&#160;</button>
+                <button type="button" class="btn btn-success" style="margin-left:20px;" ng-disabled="(isEditDirty || editRowCount == 0)" id="btnDeleteContacts" ng-click="deleteContacts()">&#160;Delete&#160;</button>
+            </div>
+        </div>
+    </form>
+</div>

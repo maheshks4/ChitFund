@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{29892094-9192-4079-8E4C-5E0D495752A5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ChitFund</RootNamespace>
+    <AssemblyName>ChitFund</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=4.0.50.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.4.0.50\lib\net40\ServiceStack.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.4.0.50\lib\portable-wp80+sl5+net40+win8+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite, Version=4.0.50.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.4.0.50\lib\net45\ServiceStack.OrmLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.Sqlite.Windows, Version=4.0.50.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.Sqlite.Windows.4.0.50\lib\net40\ServiceStack.OrmLite.Sqlite.Windows.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.0.50.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.4.0.50\lib\net40\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SQLite, Version=1.0.99.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.99.0\lib\net451\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="lib\chartlib\angular-gridster\dist\angular-gridster.min.css" />
+    <Content Include="lib\chartlib\angular-gridster\dist\angular-gridster.min.js" />
+    <Content Include="lib\chartlib\angular-gridster\dist\dashboardController.js" />
+    <Content Include="lib\chartlib\angular-gridster\dist\widgetSettings.html" />
+    <Content Include="lib\chartlib\angular-nvd3\dist\angular-nvd3.js" />
+    <Content Include="lib\chartlib\angular-nvd3\dist\angular-nvd3.min.js" />
+    <Content Include="lib\chartlib\angular-nvd3\Gruntfile.js" />
+    <Content Include="lib\chartlib\angular-nvd3\index.js" />
+    <Content Include="lib\chartlib\d3\d3.js" />
+    <Content Include="lib\chartlib\d3\d3.min.js" />
+    <Content Include="lib\chartlib\d3\package.js" />
+    <Content Include="lib\chartlib\gridster\dashboard.html" />
+    <Content Include="lib\chartlib\gridster\script.js" />
+    <Content Include="lib\chartlib\gridster\style.css" />
+    <Content Include="lib\chartlib\gridster\widgetSettings.html" />
+    <Content Include="lib\chartlib\js\boxPlotChart.js" />
+    <Content Include="lib\chartlib\js\bulletChart.js" />
+    <Content Include="lib\chartlib\js\candlestickBarChart.js" />
+    <Content Include="lib\chartlib\js\cumulativeLineChart.js" />
+    <Content Include="lib\chartlib\js\discreteBarChart.js" />
+    <Content Include="lib\chartlib\js\donutChart.js" />
+    <Content Include="lib\chartlib\js\historicalBarChart.js" />
+    <Content Include="lib\chartlib\js\lineChart.js" />
+    <Content Include="lib\chartlib\js\linePlusBarChart.js" />
+    <Content Include="lib\chartlib\js\linePlusBarWithFocusChart.js" />
+    <Content Include="lib\chartlib\js\lineWithFisheyeChart.js" />
+    <Content Include="lib\chartlib\js\lineWithFocusChart.js" />
+    <Content Include="lib\chartlib\js\multiBarChart.js" />
+    <Content Include="lib\chartlib\js\multiBarHorizontalChart.js" />
+    <Content Include="lib\chartlib\js\multiChart.js" />
+    <Content Include="lib\chartlib\js\ohlcBarChart.js" />
+    <Content Include="lib\chartlib\js\parallelCoordinates.js" />
+    <Content Include="lib\chartlib\js\pieChart.js" />
+    <Content Include="lib\chartlib\js\scatterChart.js" />
+    <Content Include="lib\chartlib\js\scatterPlusLineChart.js" />
+    <Content Include="lib\chartlib\js\sparklinePlus.js" />
+    <Content Include="lib\chartlib\js\stackedAreaChart.js" />
+    <Content Include="lib\chartlib\js\sunburstChart.js" />
+    <Content Include="lib\chartlib\nvd3\build\nv.d3.css" />
+    <Content Include="lib\chartlib\nvd3\build\nv.d3.js" />
+    <Content Include="lib\chartlib\nvd3\build\nv.d3.min.css" />
+    <Content Include="lib\chartlib\nvd3\build\nv.d3.min.js" />
+    <Content Include="lib\chartlib\nvd3\package.js" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="css\fonts\icomoon.dev.svg" />
+    <Content Include="css\fonts\icomoon.svg" />
+    <Content Include="css\images\animatedCircle.gif" />
+    <Content Include="css\images\animatedEllipse.gif" />
+    <Content Include="css\images\dialog-icons.png" />
+    <Content Include="css\images\indicator.white.gif" />
+    <Content Include="css\images\loader-indicator.gif" />
+    <Content Include="css\images\question-icon.png" />
+    <Content Include="css\images\spacer.gif" />
+    <Content Include="css\images\spinner3-greenie.gif" />
+    <Content Include="css\main.css" />
+    <Content Include="css\ng-table.css" />
+    <Content Include="css\ngExDialog.css" />
+    <Content Include="css\signin.css" />
+    <Content Include="css\simple-sidebar.css" />
+    <Content Include="css\vendor\bootstrap.css" />
+    <Content Include="css\vendor\bootstrap.min.css" />
+    <Content Include="css\vendor\ie10-viewport-bug-workaround.css" />
+    <Content Include="images\block_nine.jpg" />
+    <Content Include="images\chrome.png" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\firefox.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="index.html" />
+    <Content Include="lib\angular-animate.js" />
+    <Content Include="lib\angular-resource.js" />
+    <Content Include="lib\angular-route.js" />
+    <Content Include="lib\angular-sanitize.js" />
+    <Content Include="lib\angular.js" />
+    <Content Include="lib\bootstrap.js" />
+    <Content Include="lib\bootstrap.min.js" />
+    <Content Include="lib\jquery.js" />
+    <Content Include="lib\ui-bootstrap-tpls-0.12.0.js" />
+    <Content Include="main.html" />
+    <Content Include="partials\customEvent.html" />
+    <Content Include="partials\Dashboard.html" />
+    <Content Include="partials\header.html" />
+    <Content Include="partials\home.html" />
+    <Content Include="partials\include.html" />
+    <Content Include="partials\ngTablePager.html" />
+    <Content Include="partials\quote.html" />
+    <Content Include="partials\repeat.html" />
+    <Content Include="partials\show.html" />
+    <Content Include="partials\switch.html" />
+    <Content Include="partials\UserList.html" />
+    <Content Include="partials\view.html" />
+    <Content Include="Scripts\ajaxLoader.js" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\controllers.js" />
+    <Content Include="Scripts\dataServices.js" />
+    <Content Include="Scripts\directives.js" />
+    <Content Include="Scripts\ng-table.js" />
+    <Content Include="Scripts\ngExDialog.js" />
+    <Content Include="Scripts\vendor\ie-emulation-modes-warning.js" />
+    <Content Include="Scripts\vendor\ie10-viewport-bug-workaround.js" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="DbContext\ChitFundDbContext.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ContactRep.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebApiControllers\CustomerController.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\CFM.db" />
+    <Content Include="lib\chartlib\angular-nvd3\.bower.json" />
+    <Content Include="lib\chartlib\angular-nvd3\bower.json" />
+    <Content Include="lib\chartlib\angular-nvd3\LICENSE" />
+    <Content Include="lib\chartlib\angular-nvd3\package.json" />
+    <Content Include="lib\chartlib\angular-nvd3\README.md" />
+    <Content Include="lib\chartlib\d3\.bower.json" />
+    <Content Include="lib\chartlib\d3\.gitattributes" />
+    <Content Include="lib\chartlib\d3\bower.json" />
+    <Content Include="lib\chartlib\d3\CONTRIBUTING.md" />
+    <Content Include="lib\chartlib\d3\LICENSE" />
+    <Content Include="lib\chartlib\d3\README.md" />
+    <Content Include="lib\chartlib\nvd3\.bower.json" />
+    <Content Include="lib\chartlib\nvd3\bower.json" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="css\fonts\icomoon.eot" />
+    <Content Include="css\fonts\icomoon.ttf" />
+    <Content Include="css\fonts\icomoon.woff" />
+    <None Include="css\vendor\bootstrap.css.map" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1818</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.99.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.99.0\build\net451\System.Data.SQLite.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.99.0\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.99.0\build\net451\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
