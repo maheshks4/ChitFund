@@ -48,7 +48,7 @@ namespace ChitFund.WebApiControllers
                 {
                     ids.ForEach(delegate (int id)
                     {
-                        uow.Contacts.Delete(id);
+                           uow.Contacts.Delete(id);
                     });
                 }
             }
